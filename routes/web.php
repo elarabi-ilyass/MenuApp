@@ -17,6 +17,10 @@ use App\Http\Controllers\FoodController;
 
 Route::get('/', [FoodController::class,'homePage'])->name('HomePage');
 
+
+
+Route::get('/Test',[FoodController::class,'Test'])->name('test');
+
 Route::get('/menu/les_petits_déjeunersPage', [FoodController::class,'les_petits_déjeunersPage'])->name('les_petits_déjeunersPage');
 
 Route::get('/menu/les_snacks_et_les_plats', [FoodController::class,'les_snacks_et_les_plats'])->name('les_snacks_et_les_plats');

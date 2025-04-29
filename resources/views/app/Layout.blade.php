@@ -12,10 +12,11 @@
         <div class="header" style="background: url('@if(Route::currentRouteName() == 'les_jus_et_les_boissons_et_froides')
                 @voyager_image($layoutInfo->les_jus_et_les_boissons_et_froides_background)
             @elseif(Route::currentRouteName() == 'les_crépes_et_les_viennoiseries')
-                 {{ asset('') }}
+                 ''
             @else
                 @voyager_image($layoutInfo->Background_image)
             @endif');">
+
             <div class="title-image">
                 <img src="@if(Route::currentRouteName() == 'les_jus_et_les_boissons_et_froides' || Route::currentRouteName() == 'les_crépes_et_les_viennoiseries')
                     @voyager_image($layoutInfo->les_jus_et_les_boissons_et_froides_title)
@@ -33,9 +34,20 @@
 
         @yield('content')
 
-        <div class='footer'>
-            <img src="@voyager_image($layoutInfo->Footer_image)" alt="Footer"/>
-        </div>
+        <footer>
+            <div class="address">
+                <p>ADDRESS</p>
+                <p>{{ $homeInfo->adress }}</p>
+                <p>TELE</p>
+                <p><a href="tel:{{ $homeInfo->tel_1 }}">{{ $homeInfo->tel_1 }} </a> - <a href="tel:{{ $homeInfo->tel_2 }}">{{ $homeInfo->tel_2 }} </a></p>
+            </div>
+
+            <div class="copyright">
+                <p>
+                    {!! html_entity_decode($homeInfo->copyright) !!} <a href='https://www.black-concept.ma/'>BLACK-CONCEPT</a>
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

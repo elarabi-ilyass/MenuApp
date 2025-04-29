@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Home extends Model
+class HomeFood extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'image',
-        'route_name'
+
+    protected $fillable=[
+        'name',
+        'icon',
+        'background',
+        'Link'
+
     ];
 }
